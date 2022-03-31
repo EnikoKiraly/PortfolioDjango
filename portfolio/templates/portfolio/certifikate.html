@@ -1,0 +1,23 @@
+{% load static %}
+<section class="section sec4 " id="blogs">
+            <div class="blogs-content">
+                <div class="main-title">
+                    <h2>My <span>Certificates</span></h2>
+                </div>
+                <div class="blogs">
+                    {% for certificate in certifikates%}
+                    <div class="blog">
+                        <img src="{{ certificate.image.url }}" alt="">
+                        <div class="blog-text">
+                            <h4>
+                                {{certificate.title}}
+                            </h4>
+                            <p>
+                                {{certificate.description}}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}              
+                </div>
+            </div>
+</section>

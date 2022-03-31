@@ -1,0 +1,39 @@
+{% load static %}
+<section class="section sec3" id="portfolio">
+            <div class="main-title">
+                <h2>My <span>Portfolio</span></h2>
+            </div>
+            <p class="port-text">
+                Here is some of my work that I've done in various programming languages.
+            </p>
+            <div class="portfolios">
+                {% for project in projects%}
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="{{ project.image.url }}" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>{{project.name}}</h3>
+                        <div class="icons">
+                            {% if project.github%}
+                            <a href="{{project.github}}" class="icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            {% endif %}
+
+                            {% if project.website %}
+                            <a href="{{project.website}}" class="icon">
+                                <i class="fas fa-code"></i>
+                            </a>
+                            {% endif %}
+                            {% if project.youtube%}
+                            <a href="{{project.youtube}}" class="icon">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+</section>

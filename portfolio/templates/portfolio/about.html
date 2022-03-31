@@ -1,0 +1,51 @@
+{% load static %}
+<section class="section sec2 about" id="about">
+            <div class="main-title">
+                <h2>About <span>me</span><h2>
+            </div>
+            <div class="about-container">
+                    <p>
+                        My first contact with Programing was in 2005 when I started to study at university. But I got into programming because
+                        of the lock down. I started to study Python and I fell in love with coding.<br /> <br />
+                        I love to surf and my current profession is Kite Instructor.
+                    </p>
+            </div>
+            <h4 class="stat-title">My Programing Skills</h4>
+            <div class="portfolios">
+                {% for skil in skils%}
+                <div class="portfolio-item">
+                        <h1 class="skils-text">{{skil}}</h1>
+                </div>
+                {% endfor %}
+                
+            </div>
+            <h4 class="stat-title">Languages</h4>
+            <div class="portfolios">
+                <div class="portfolio-item">
+                    <img src="{% static '/images/001-poland.png' %}" alt="">
+                </div>
+                <div class="portfolio-item">
+                    <img src="{% static '/images/002-spain.png' %}" alt="">
+                </div>
+                <div class="portfolio-item">
+                    <img src="{% static '/images/003-united-kingdom.png' %}" alt="">
+                </div>
+            </div>
+
+               
+            <h4 class="stat-title">My Timeline</h4>
+            <div class="timeline">
+                {%for timeline in timelines %}
+                <div class="timeline-item">
+                    <div class="tl-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <p class="tl-duration">{{timeline.year_start}} -{{timeline.year_finish}}</p>
+                    <h5>{{timeline.company_name}}<span> - {{timeline.position}}</span></h5>
+                    <p>
+                        {{timeline.description}}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+</section>
